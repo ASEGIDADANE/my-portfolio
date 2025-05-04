@@ -30,7 +30,7 @@ const skillCategories = [
     skills: [
       { name: 'Flutter', icon: '🎯' },
       { name: 'FlutterFlow', icon: '🚀' },
-      { name: 'Dart', icon: '🎯' },
+      { name: 'Dart', icon: '💙' },
       { name: 'Clean Architecture', icon: '🏗️' },
     ],
   },
@@ -48,11 +48,11 @@ const SkillCard = ({ skill, index }: { skill: typeof skillCategories[0]['skills'
       initial={{ opacity: 0, y: 20 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 group"
+      className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 group"
     >
       <div className="flex items-center space-x-4">
         <div className="text-3xl group-hover:scale-110 transition-transform duration-300">{skill.icon}</div>
-        <h3 className="text-xl font-semibold text-white group-hover:text-blue-400 transition-colors duration-300">
+        <h3 className="text-xl font-semibold text-gray-900 dark:text-white group-hover:text-blue-500 dark:group-hover:text-blue-400 transition-colors duration-300">
           {skill.name}
         </h3>
       </div>
@@ -67,7 +67,7 @@ const Skills = ({ onSectionChange }: SkillsProps) => {
   });
 
   return (
-    <section id="skills" className="py-20 bg-gray-900">
+    <section id="skills" className="py-20 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
@@ -76,10 +76,10 @@ const Skills = ({ onSectionChange }: SkillsProps) => {
           transition={{ duration: 0.8 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl font-bold mb-4 gradient-text">
+          <h2 className="text-3xl font-bold mb-4 text-gray-900 dark:text-white">
             My Skills
           </h2>
-          <p className="text-gray-300">
+          <p className="text-gray-600 dark:text-gray-300">
             Here are the technologies and tools I work with
           </p>
         </motion.div>
@@ -93,7 +93,7 @@ const Skills = ({ onSectionChange }: SkillsProps) => {
               transition={{ duration: 0.5 }}
               className="space-y-6"
             >
-              <h3 className="text-xl font-bold text-white mb-6">{category.name}</h3>
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6">{category.name}</h3>
               <div className="grid grid-cols-1 gap-4">
                 {category.skills.map((skill, index) => (
                   <SkillCard key={skill.name} skill={skill} index={index} />

@@ -34,7 +34,7 @@ const About = ({ onSectionChange }: AboutProps) => {
   });
 
   return (
-    <section id="about" className="py-20 bg-gray-800">
+    <section id="about" className="py-20 bg-white dark:bg-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
@@ -43,10 +43,10 @@ const About = ({ onSectionChange }: AboutProps) => {
           transition={{ duration: 0.8 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl font-bold mb-4 gradient-text">
+          <h2 className="text-3xl font-bold mb-4 text-gray-900 dark:text-white">
             About Me
           </h2>
-          <p className="text-gray-300">
+          <p className="text-gray-600 dark:text-gray-300">
             Get to know more about me and my journey
           </p>
         </motion.div>
@@ -62,7 +62,7 @@ const About = ({ onSectionChange }: AboutProps) => {
               <motion.img
                 src="/profile.jpg"
                 alt="Profile"
-                className="w-full h-full object-cover rounded-lg"
+                className="w-full h-full object-cover rounded-lg shadow-xl"
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={inView ? { scale: 1, opacity: 1 } : {}}
                 transition={{ duration: 0.8, delay: 0.2 }}
@@ -77,21 +77,21 @@ const About = ({ onSectionChange }: AboutProps) => {
           </motion.div>
 
           <motion.div variants={itemVariants} className="space-y-6">
-            <p className="text-gray-300">
+            <p className="text-gray-600 dark:text-gray-300">
               I'm a skilled Mobile App and Backend Developer with strong problem-solving abilities and a solid background in data structures and algorithms. At A2SV, I work on building scalable, high-quality applications while mastering both Flutter development and backend engineering.
             </p>
-            <p className="text-gray-300">
+            <p className="text-gray-600 dark:text-gray-300">
               I'm passionate about clean code, efficient systems, and using tech to solve real-world problems. My experience spans across various technologies and frameworks, allowing me to create robust and maintainable solutions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <button
                 onClick={() => onSectionChange('projects')}
-                className="btn-primary"
+                className="px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition-colors shadow-lg hover:shadow-xl"
               >
                 View My Projects
               </button>
               <button
-                className="btn-outline flex items-center justify-center gap-2"
+                className="px-6 py-3 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-lg transition-colors shadow-lg hover:shadow-xl flex items-center justify-center gap-2"
               >
                 <ArrowDownTrayIcon className="icon-md" />
                 Download Resume

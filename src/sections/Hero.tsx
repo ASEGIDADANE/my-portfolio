@@ -9,7 +9,7 @@ const Hero = ({ onSectionChange }: HeroProps) => {
   const tools = ['Flutter', 'Node.js', 'NestJS', 'FlutterFlow', 'Docker', 'CI/CD'];
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center bg-gray-900 text-white">
+    <section id="home" className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="text-center">
           <motion.h1
@@ -18,7 +18,7 @@ const Hero = ({ onSectionChange }: HeroProps) => {
             transition={{ duration: 0.8 }}
             className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6"
           >
-            <span className="gradient-text">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-green-500">
               Mobile App & Backend Developer
             </span>
           </motion.h1>
@@ -27,7 +27,7 @@ const Hero = ({ onSectionChange }: HeroProps) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl sm:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto"
+            className="text-xl sm:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto"
           >
             I specialize in building robust, scalable backend systems and cross-platform mobile apps.
           </motion.p>
@@ -41,7 +41,7 @@ const Hero = ({ onSectionChange }: HeroProps) => {
             {tools.map((tool, index) => (
               <span
                 key={tool}
-                className="px-4 py-2 bg-gray-800 text-gray-300 rounded-full text-sm hover:bg-gray-700 transition-colors"
+                className="px-4 py-2 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full text-sm hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors shadow-sm"
               >
                 {tool}
               </span>
@@ -56,12 +56,12 @@ const Hero = ({ onSectionChange }: HeroProps) => {
           >
             <button
               onClick={() => onSectionChange('contact')}
-              className="btn-primary"
+              className="px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition-colors shadow-lg hover:shadow-xl"
             >
               Contact Me
             </button>
             <button
-              className="btn-outline flex items-center justify-center gap-2"
+              className="px-6 py-3 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-lg transition-colors shadow-lg hover:shadow-xl flex items-center justify-center gap-2"
             >
               <ArrowDownTrayIcon className="icon-md" />
               Download CV
@@ -78,7 +78,7 @@ const Hero = ({ onSectionChange }: HeroProps) => {
               href="https://github.com/yourusername"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-blue-400 transition-colors duration-300"
+              className="text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-300"
             >
               <span className="sr-only">GitHub</span>
               <svg className="icon-lg" fill="currentColor" viewBox="0 0 24 24">
@@ -93,7 +93,7 @@ const Hero = ({ onSectionChange }: HeroProps) => {
               href="https://linkedin.com/in/yourusername"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-blue-400 transition-colors duration-300"
+              className="text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-300"
             >
               <span className="sr-only">LinkedIn</span>
               <svg className="icon-lg" fill="currentColor" viewBox="0 0 24 24">
@@ -108,7 +108,7 @@ const Hero = ({ onSectionChange }: HeroProps) => {
               href="https://twitter.com/yourusername"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-blue-400 transition-colors duration-300"
+              className="text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-300"
             >
               <span className="sr-only">Twitter</span>
               <svg className="icon-lg" fill="currentColor" viewBox="0 0 24 24">
@@ -119,7 +119,7 @@ const Hero = ({ onSectionChange }: HeroProps) => {
               href="https://t.me/yourusername"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-blue-400 transition-colors duration-300"
+              className="text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-300"
             >
               <span className="sr-only">Telegram</span>
               <svg className="icon-lg" fill="currentColor" viewBox="0 0 24 24">

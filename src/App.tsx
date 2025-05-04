@@ -1,22 +1,51 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './sections/Hero';
 import About from './sections/About';
 import Projects from './sections/Projects';
 import Skills from './sections/Skills';
-import Contact from './sections/Contact';
 import Testimonials from './sections/Testimonials';
+import Contact from './sections/Contact';
 
 function App() {
   const [activeSection, setActiveSection] = useState('home');
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    // Check localStorage first
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      return savedTheme === 'dark';
+    }
+    // Then check system preference
+    return window.matchMedia('(prefers-color-scheme: dark)').matches;
+  });
+
+  // Apply dark mode class to html element
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+    }
+  }, [isDarkMode]);
 
   const handleSectionChange = (section: string) => {
     setActiveSection(section);
   };
 
+  const toggleTheme = () => {
+    setIsDarkMode(!isDarkMode);
+  };
+
   return (
-    <div className="min-h-screen bg-gray-900">
-      <Navbar activeSection={activeSection} onSectionChange={handleSectionChange} />
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+      <Navbar 
+        activeSection={activeSection} 
+        onSectionChange={handleSectionChange}
+        isDarkMode={isDarkMode}
+        onThemeToggle={toggleTheme}
+      />
       <main>
         <Hero onSectionChange={handleSectionChange} />
         <About onSectionChange={handleSectionChange} />
@@ -25,7 +54,7 @@ function App() {
         <Testimonials onSectionChange={handleSectionChange} />
         <Contact onSectionChange={handleSectionChange} />
       </main>
-      <footer className="py-6 bg-gray-800">
+      <footer className="py-6 bg-white dark:bg-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col items-center space-y-4">
             <div className="flex space-x-6">
@@ -33,7 +62,7 @@ function App() {
                 href="https://github.com/yourusername"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-blue-400 transition-colors duration-300"
+                className="text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-300"
               >
                 <span className="sr-only">GitHub</span>
                 <svg className="icon-lg" fill="currentColor" viewBox="0 0 24 24">
@@ -48,7 +77,7 @@ function App() {
                 href="https://linkedin.com/in/yourusername"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-blue-400 transition-colors duration-300"
+                className="text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-300"
               >
                 <span className="sr-only">LinkedIn</span>
                 <svg className="icon-lg" fill="currentColor" viewBox="0 0 24 24">
@@ -63,7 +92,7 @@ function App() {
                 href="https://twitter.com/yourusername"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-blue-400 transition-colors duration-300"
+                className="text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-300"
               >
                 <span className="sr-only">Twitter</span>
                 <svg className="icon-lg" fill="currentColor" viewBox="0 0 24 24">
@@ -74,7 +103,7 @@ function App() {
                 href="https://t.me/yourusername"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-blue-400 transition-colors duration-300"
+                className="text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-300"
               >
                 <span className="sr-only">Telegram</span>
                 <svg className="icon-lg" fill="currentColor" viewBox="0 0 24 24">
@@ -82,15 +111,15 @@ function App() {
                 </svg>
               </a>
             </div>
-            <p className="text-gray-400 text-center">
+            <p className="text-gray-600 dark:text-gray-400 text-center">
               © {new Date().getFullYear()} Your Name. All rights reserved.
             </p>
-            <div className="flex space-x-4 text-sm text-gray-400">
-              <a href="#" className="hover:text-blue-400 transition-colors duration-300">
+            <div className="flex space-x-4 text-sm text-gray-600 dark:text-gray-400">
+              <a href="#" className="hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-300">
                 Terms
               </a>
               <span>•</span>
-              <a href="#" className="hover:text-blue-400 transition-colors duration-300">
+              <a href="#" className="hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-300">
                 Privacy
               </a>
             </div>

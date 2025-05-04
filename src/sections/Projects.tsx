@@ -46,7 +46,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
   return (
     <motion.div
       whileHover={{ y: -10 }}
-      className="bg-gray-800 rounded-lg overflow-hidden shadow-lg"
+      className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
     >
       <div className="relative h-48">
         <motion.img
@@ -63,12 +63,12 @@ const ProjectCard = ({ project }: { project: Project }) => {
         </div>
       </div>
       <div className="p-6">
-        <p className="text-gray-300 mb-4">{project.description}</p>
+        <p className="text-gray-600 dark:text-gray-300 mb-4">{project.description}</p>
         <div className="flex flex-wrap gap-2 mb-4">
           {project.technologies.map((tech) => (
             <span
               key={tech}
-              className="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-sm"
+              className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full text-sm"
             >
               {tech}
             </span>
@@ -79,7 +79,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
             href={project.githubLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center text-blue-400 hover:text-blue-300 transition-colors"
+            className="flex items-center text-blue-500 dark:text-blue-400 hover:text-blue-600 dark:hover:text-blue-300 transition-colors"
           >
             <CodeBracketIcon className="icon-sm mr-2" />
             See Code
@@ -88,7 +88,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
             href={project.demoLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center text-blue-400 hover:text-blue-300 transition-colors"
+            className="flex items-center text-blue-500 dark:text-blue-400 hover:text-blue-600 dark:hover:text-blue-300 transition-colors"
           >
             <ArrowTopRightOnSquareIcon className="icon-sm mr-2" />
             View Project
@@ -106,7 +106,7 @@ const Projects = ({ onSectionChange }: ProjectsProps) => {
   });
 
   return (
-    <section id="projects" className="py-20 bg-gray-900">
+    <section id="projects" className="py-20 bg-gray-50 dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
@@ -115,10 +115,10 @@ const Projects = ({ onSectionChange }: ProjectsProps) => {
           transition={{ duration: 0.8 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl font-bold mb-4 gradient-text">
+          <h2 className="text-3xl font-bold mb-4 text-gray-900 dark:text-white">
             My Projects
           </h2>
-          <p className="text-gray-300">
+          <p className="text-gray-600 dark:text-gray-300">
             Check out some of my recent work
           </p>
         </motion.div>

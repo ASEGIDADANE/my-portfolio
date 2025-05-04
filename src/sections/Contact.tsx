@@ -44,7 +44,7 @@ const Contact = ({ onSectionChange }: ContactProps) => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gray-900">
+    <section id="contact" className="py-20 bg-white dark:bg-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           ref={ref}
@@ -53,10 +53,10 @@ const Contact = ({ onSectionChange }: ContactProps) => {
           transition={{ duration: 0.8 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl font-bold mb-4 gradient-text">
+          <h2 className="text-3xl font-bold mb-4 text-gray-900 dark:text-white">
             Get In Touch
           </h2>
-          <p className="text-gray-300">
+          <p className="text-gray-600 dark:text-gray-300">
             Have a project in mind or want to collaborate? Let's talk!
           </p>
         </motion.div>
@@ -70,7 +70,7 @@ const Contact = ({ onSectionChange }: ContactProps) => {
             className="space-y-6"
           >
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-1">
+              <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                 Name
               </label>
               <input
@@ -80,12 +80,12 @@ const Contact = ({ onSectionChange }: ContactProps) => {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="input-field"
+                className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
               />
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-1">
+              <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                 Email
               </label>
               <input
@@ -95,12 +95,12 @@ const Contact = ({ onSectionChange }: ContactProps) => {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="input-field"
+                className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
               />
             </div>
 
             <div>
-              <label htmlFor="subject" className="block text-sm font-medium text-gray-300 mb-1">
+              <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                 Subject
               </label>
               <input
@@ -110,12 +110,12 @@ const Contact = ({ onSectionChange }: ContactProps) => {
                 value={formData.subject}
                 onChange={handleChange}
                 required
-                className="input-field"
+                className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
               />
             </div>
 
             <div>
-              <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-1">
+              <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
                 Message
               </label>
               <textarea
@@ -125,25 +125,25 @@ const Contact = ({ onSectionChange }: ContactProps) => {
                 onChange={handleChange}
                 required
                 rows={4}
-                className="input-field"
+                className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
               />
             </div>
 
             <button
               type="submit"
               disabled={isSubmitting}
-              className="btn-primary w-full"
+              className="w-full px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition-colors shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isSubmitting ? 'Sending...' : 'Send Message'}
             </button>
 
             {submitStatus === 'success' && (
-              <p className="text-green-400 text-center">
+              <p className="text-green-500 dark:text-green-400 text-center">
                 Message sent successfully! I'll get back to you soon.
               </p>
             )}
             {submitStatus === 'error' && (
-              <p className="text-red-400 text-center">
+              <p className="text-red-500 dark:text-red-400 text-center">
                 Something went wrong. Please try again later.
               </p>
             )}
@@ -160,7 +160,7 @@ const Contact = ({ onSectionChange }: ContactProps) => {
                 href="https://github.com/yourusername"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-blue-400 transition-colors duration-300"
+                className="text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-300"
               >
                 <span className="sr-only">GitHub</span>
                 <svg className="icon-lg" fill="currentColor" viewBox="0 0 24 24">
@@ -175,7 +175,7 @@ const Contact = ({ onSectionChange }: ContactProps) => {
                 href="https://linkedin.com/in/yourusername"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-blue-400 transition-colors duration-300"
+                className="text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-300"
               >
                 <span className="sr-only">LinkedIn</span>
                 <svg className="icon-lg" fill="currentColor" viewBox="0 0 24 24">
@@ -190,7 +190,7 @@ const Contact = ({ onSectionChange }: ContactProps) => {
                 href="https://twitter.com/yourusername"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-blue-400 transition-colors duration-300"
+                className="text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-300"
               >
                 <span className="sr-only">Twitter</span>
                 <svg className="icon-lg" fill="currentColor" viewBox="0 0 24 24">
@@ -201,7 +201,7 @@ const Contact = ({ onSectionChange }: ContactProps) => {
                 href="https://t.me/yourusername"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-blue-400 transition-colors duration-300"
+                className="text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-300"
               >
                 <span className="sr-only">Telegram</span>
                 <svg className="icon-lg" fill="currentColor" viewBox="0 0 24 24">
@@ -211,7 +211,7 @@ const Contact = ({ onSectionChange }: ContactProps) => {
             </div>
             <a
               href="mailto:your.email@example.com"
-              className="text-gray-400 hover:text-blue-400 transition-colors duration-300"
+              className="text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-300"
             >
               your.email@example.com
             </a>
