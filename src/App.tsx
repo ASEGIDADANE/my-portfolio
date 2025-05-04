@@ -59,7 +59,7 @@ function App() {
           <div className="flex flex-col items-center space-y-4">
             <div className="flex space-x-6">
               <a
-                href="https://github.com/yourusername"
+                href="https://github.com/ASEGIDADANE"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-300"
@@ -74,7 +74,7 @@ function App() {
                 </svg>
               </a>
               <a
-                href="https://linkedin.com/in/yourusername"
+                href="https://www.linkedin.com/in/asegid-adane-843b07231/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-300"
@@ -89,7 +89,7 @@ function App() {
                 </svg>
               </a>
               <a
-                href="https://twitter.com/yourusername"
+                href="https://x.com/Asegid123"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-300"
@@ -100,7 +100,7 @@ function App() {
                 </svg>
               </a>
               <a
-                href="https://t.me/yourusername"
+                href="https://t.me/AsegidAdane"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-300"
@@ -112,7 +112,7 @@ function App() {
               </a>
             </div>
             <p className="text-gray-600 dark:text-gray-400 text-center">
-              © {new Date().getFullYear()} Your Name. All rights reserved.
+              © {new Date().getFullYear()} Asegid Adane. All rights reserved.
             </p>
             <div className="flex space-x-4 text-sm text-gray-600 dark:text-gray-400">
               <a href="#" className="hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-300">

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { XMarkIcon, Bars3Icon } from '@heroicons/react/24/outline';
 
@@ -13,16 +13,41 @@ const Navbar = ({ activeSection, onSectionChange, isDarkMode, onThemeToggle }: N
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', href: '#home', id: 'home' },
+    { name: 'About', href: '#about', id: 'about' },
+    { name: 'Projects', href: '#projects', id: 'projects' },
+    { name: 'Skills', href: '#skills', id: 'skills' },
+    { name: 'Contact', href: '#contact', id: 'contact' },
   ];
+
+  // Track scroll position to update active section
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = navItems.map(item => document.getElementById(item.id));
+      const scrollPosition = window.scrollY + 100; // Offset for navbar height
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = sections[i];
+        if (section && section.offsetTop <= scrollPosition) {
+          onSectionChange(navItems[i].id);
+          break;
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [navItems, onSectionChange]);
 
   const handleClick = (section: string) => {
     setIsOpen(false);
-    onSectionChange(section);
+    const element = document.getElementById(section);
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
   };
 
   return (
@@ -31,7 +56,7 @@ const Navbar = ({ activeSection, onSectionChange, isDarkMode, onThemeToggle }: N
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
             <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-blue-500 bg-clip-text text-transparent dark:from-blue-400 dark:to-blue-300">
-              Portfolio
+              Asegid Adane
             </span>
           </div>
 
@@ -40,11 +65,11 @@ const Navbar = ({ activeSection, onSectionChange, isDarkMode, onThemeToggle }: N
             {navItems.map((item) => (
               <button
                 key={item.name}
-                onClick={() => handleClick(item.name.toLowerCase())}
+                onClick={() => handleClick(item.id)}
                 className={`px-4 py-2 rounded-md text-sm font-medium transition-all duration-300 ${
-                  activeSection === item.name.toLowerCase()
+                  activeSection === item.id
                     ? 'text-blue-600 dark:text-blue-400 bg-white dark:bg-gray-800 shadow-md border border-gray-100 dark:border-gray-700'
-                    :  'text-gray-800 dark:text-gray-300 bg-white dark:bg-gray-900 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800'}
+                    : 'text-gray-800 dark:text-gray-300 bg-white dark:bg-gray-900 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800'
                 }`}
               >
                 {item.name}
@@ -94,11 +119,11 @@ const Navbar = ({ activeSection, onSectionChange, isDarkMode, onThemeToggle }: N
             {navItems.map((item) => (
               <button
                 key={item.name}
-                onClick={() => handleClick(item.name.toLowerCase())}
+                onClick={() => handleClick(item.id)}
                 className={`block w-full text-left px-4 py-2 rounded-md text-base font-medium transition-all duration-300 ${
-                  activeSection === item.name.toLowerCase()
-                    ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20 shadow-md border border-gray-200 dark:border-gray-700'
-                    : 'text-gray-800 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800'
+                  activeSection === item.id
+                    ? 'text-blue-600 dark:text-blue-400 bg-white dark:bg-gray-800 shadow-md border border-gray-100 dark:border-gray-700'
+                    : 'text-gray-800 dark:text-gray-300 bg-white dark:bg-gray-900 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-gray-100 dark:hover:bg-gray-800'
                 }`}
               >
                 {item.name}

@@ -157,7 +157,7 @@ const Contact = ({ onSectionChange }: ContactProps) => {
           >
             <div className="flex space-x-6">
               <a
-                href="https://github.com/yourusername"
+                href="https://github.com/ASEGIDADANE"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-300"
@@ -172,7 +172,7 @@ const Contact = ({ onSectionChange }: ContactProps) => {
                 </svg>
               </a>
               <a
-                href="https://linkedin.com/in/yourusername"
+                href="https://www.linkedin.com/in/asegid-adane-843b07231/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-300"
@@ -187,7 +187,7 @@ const Contact = ({ onSectionChange }: ContactProps) => {
                 </svg>
               </a>
               <a
-                href="https://twitter.com/yourusername"
+                href="https://x.com/Asegid123"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-300"
@@ -198,7 +198,7 @@ const Contact = ({ onSectionChange }: ContactProps) => {
                 </svg>
               </a>
               <a
-                href="https://t.me/yourusername"
+                href="https://t.me/AsegidAdane"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-300"
@@ -210,10 +210,10 @@ const Contact = ({ onSectionChange }: ContactProps) => {
               </a>
             </div>
             <a
-              href="mailto:your.email@example.com"
+              href="mailto:asegidadane27@gmail.com"
               className="text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-300"
             >
-              your.email@example.com
+              asegidadane27@gmail.com
             </a>
           </motion.div>
         </div>

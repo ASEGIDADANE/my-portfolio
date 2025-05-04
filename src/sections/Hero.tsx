@@ -75,7 +75,7 @@ const Hero = ({ onSectionChange }: HeroProps) => {
             className="flex justify-center space-x-6"
           >
             <a
-              href="https://github.com/yourusername"
+              href="https://github.com/ASEGIDADANE"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-300"
@@ -90,7 +90,7 @@ const Hero = ({ onSectionChange }: HeroProps) => {
               </svg>
             </a>
             <a
-              href="https://linkedin.com/in/yourusername"
+              href="https://www.linkedin.com/in/asegid-adane-843b07231/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-300"
@@ -105,7 +105,7 @@ const Hero = ({ onSectionChange }: HeroProps) => {
               </svg>
             </a>
             <a
-              href="https://twitter.com/yourusername"
+              href="https://x.com/Asegid123"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-300"
@@ -116,7 +116,7 @@ const Hero = ({ onSectionChange }: HeroProps) => {
               </svg>
             </a>
             <a
-              href="https://t.me/yourusername"
+              href="https://t.me/AsegidAdane"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-300"

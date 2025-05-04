@@ -40,6 +40,30 @@ const projects: Project[] = [
     githubLink: 'https://github.com/yourusername/task-api',
     demoLink: 'https://task-api-demo.com',
   },
+  {
+    title: 'Portfolio Website',
+    description: 'A modern portfolio website built with React, TypeScript, and Tailwind CSS, featuring dark mode, smooth animations, and responsive design.',
+    image: '/project4.jpg',
+    technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
+    githubLink: 'https://github.com/yourusername/portfolio',
+    demoLink: 'https://your-portfolio.com',
+  },
+  {
+    title: 'AI Chatbot Integration',
+    description: 'A conversational AI chatbot integrated with a web application, using natural language processing and machine learning for intelligent responses.',
+    image: '/project5.jpg',
+    technologies: ['Python', 'TensorFlow', 'NLP', 'WebSocket'],
+    githubLink: 'https://github.com/yourusername/ai-chatbot',
+    demoLink: 'https://ai-chatbot-demo.com',
+  },
+  {
+    title: 'Cloud Storage Service',
+    description: 'A secure cloud storage service with end-to-end encryption, file sharing capabilities, and real-time collaboration features.',
+    image: '/project6.jpg',
+    technologies: ['AWS', 'React', 'Node.js', 'MongoDB'],
+    githubLink: 'https://github.com/yourusername/cloud-storage',
+    demoLink: 'https://cloud-storage-demo.com',
+  }
 ];
 
 const ProjectCard = ({ project }: { project: Project }) => {
