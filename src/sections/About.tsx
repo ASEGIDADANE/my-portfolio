@@ -1,104 +1,88 @@
 import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import { ArrowDownTrayIcon } from '@heroicons/react/24/outline';
+import { ArrowRightIcon } from '@heroicons/react/24/outline';
 
 interface AboutProps {
   onSectionChange: (section: string) => void;
 }
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.5,
-    },
-  },
-};
-
 const About = ({ onSectionChange }: AboutProps) => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
+  const handleProjectsClick = () => {
+    const projectsSection = document.getElementById('projects');
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+      onSectionChange('projects');
+    }
+  };
 
   return (
-    <section id="about" className="py-20 bg-white dark:bg-gray-800">
+    <section id="about" className="py-20 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          ref={ref}
           initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-12"
+          className="text-center mb-16"
         >
-          <h2 className="text-3xl font-bold mb-4 text-gray-900 dark:text-white">
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
             About Me
           </h2>
-          <p className="text-gray-600 dark:text-gray-300">
-            Get to know more about me and my journey
-          </p>
+          <div className="w-24 h-1 bg-blue-500 mx-auto"></div>
         </motion.div>
 
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"}
-          className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
-        >
-          <motion.div variants={itemVariants} className="relative">
-            <div className="relative w-full aspect-square max-w-md mx-auto">
-              <motion.img
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className="relative">
+              <div className="absolute -inset-4 bg-gradient-to-r from-blue-500 to-green-500 rounded-lg blur opacity-20"></div>
+              <img
                 src="/profile.jpg"
                 alt="Profile"
-                className="w-full h-full object-cover rounded-lg shadow-xl"
-                initial={{ scale: 0.8, opacity: 0 }}
-                animate={inView ? { scale: 1, opacity: 1 } : {}}
-                transition={{ duration: 0.8, delay: 0.2 }}
-              />
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-green-500/20 rounded-lg"
-                initial={{ opacity: 0 }}
-                animate={inView ? { opacity: 1 } : {}}
-                transition={{ duration: 0.8, delay: 0.4 }}
+                className="relative rounded-lg shadow-xl w-full h-auto"
               />
             </div>
           </motion.div>
 
-          <motion.div variants={itemVariants} className="space-y-6">
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="space-y-6"
+          >
+            <h3 className="text-3xl font-extrabold text-gray-900 dark:text-white leading-snug">
+  Crafting Scalable Apps with Passion for Web & Mobile Innovation
+</h3>
+<p className="mt-4 text-md text-gray-700 dark:text-gray-300 max-w-3xl">
+  I’m a dedicated Mobile App and Backend Developer with a strong foundation in data structures and algorithms, honed through my experience at <span className="font-semibold">A2SV</span>. I specialize in building efficient, scalable, and user-centric applications using <span className="font-semibold">Flutter, Node.js, NestJS, and modern DevOps practices</span>. With a deep passion for clean architecture and real-world problem-solving, I strive to create technology that’s not just functional — but impactful.
+</p>
+
             <p className="text-gray-600 dark:text-gray-300">
-              I'm a skilled Mobile App and Backend Developer with strong problem-solving abilities and a solid background in data structures and algorithms. At A2SV, I work on building scalable, high-quality applications while mastering both Flutter development and backend engineering.
+              I'm constantly learning and exploring new technologies to stay at the forefront
+              of software development. My goal is to create applications that not only meet
+              but exceed user expectations.
             </p>
-            <p className="text-gray-600 dark:text-gray-300">
-              I'm passionate about clean code, efficient systems, and using tech to solve real-world problems. My experience spans across various technologies and frameworks, allowing me to create robust and maintainable solutions.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-wrap gap-4">
               <button
-                onClick={() => onSectionChange('projects')}
-                className="px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition-colors shadow-lg hover:shadow-xl"
+                onClick={handleProjectsClick}
+                className="px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition-colors shadow-lg hover:shadow-xl flex items-center gap-2"
               >
                 View My Projects
+                <ArrowRightIcon className="w-5 h-5" />
               </button>
-              <button
-                className="px-6 py-3 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-lg transition-colors shadow-lg hover:shadow-xl flex items-center justify-center gap-2"
-              >
-                <ArrowDownTrayIcon className="icon-md" />
+              <button className="px-6 py-3 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-lg transition-colors shadow-lg hover:shadow-xl">
                 Download Resume
               </button>
             </div>
           </motion.div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

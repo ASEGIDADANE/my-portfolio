@@ -8,6 +8,17 @@ interface HeroProps {
 const Hero = ({ onSectionChange }: HeroProps) => {
   const tools = ['Flutter', 'Node.js', 'NestJS', 'FlutterFlow', 'Docker', 'CI/CD'];
 
+  const handleContactClick = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+      onSectionChange('contact');
+    }
+  };
+
   return (
     <section id="home" className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
@@ -55,7 +66,7 @@ const Hero = ({ onSectionChange }: HeroProps) => {
             className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
           >
             <button
-              onClick={() => onSectionChange('contact')}
+              onClick={handleContactClick}
               className="px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition-colors shadow-lg hover:shadow-xl"
             >
               Contact Me
