@@ -33,19 +33,20 @@ const About = ({ onSectionChange }: AboutProps) => {
           <div className="w-24 h-1 bg-blue-500 mx-auto"></div>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="flex flex-col lg:flex-row items-center gap-8 p-4">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
+            className="w-full lg:w-1/3 flex justify-center"
           >
-            <div className="relative">
-              <div className="absolute -inset-4 bg-gradient-to-r from-blue-500 to-green-500 rounded-lg blur opacity-20"></div>
+            <div className="relative max-w-md mx-auto">
+              <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-green-500 rounded-full blur opacity-20"></div>
               <img
                 src="/profile.jpg"
                 alt="Profile"
-                className="relative rounded-lg shadow-xl w-full h-auto"
+                className="relative rounded-full w-64 h-64 object-cover border-4 border-white dark:border-gray-800 shadow-lg hover:shadow-xl transition-all duration-300"
               />
             </div>
           </motion.div>
@@ -55,19 +56,13 @@ const About = ({ onSectionChange }: AboutProps) => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="space-y-6"
+            className="w-full lg:w-2/3 space-y-6"
           >
             <h3 className="text-3xl font-extrabold text-gray-900 dark:text-white leading-snug">
-  Crafting Scalable Apps with Passion for Web & Mobile Innovation
-</h3>
-<p className="mt-4 text-md text-gray-700 dark:text-gray-300 max-w-3xl">
-  I’m a dedicated Mobile App and Backend Developer with a strong foundation in data structures and algorithms, honed through my experience at <span className="font-semibold">A2SV</span>. I specialize in building efficient, scalable, and user-centric applications using <span className="font-semibold">Flutter, Node.js, NestJS, and modern DevOps practices</span>. With a deep passion for clean architecture and real-world problem-solving, I strive to create technology that’s not just functional — but impactful.
-</p>
-
-            <p className="text-gray-600 dark:text-gray-300">
-              I'm constantly learning and exploring new technologies to stay at the forefront
-              of software development. My goal is to create applications that not only meet
-              but exceed user expectations.
+              Crafting Scalable Apps with Passion for Web & Mobile Innovation
+            </h3>
+            <p className="mt-4 text-md text-gray-700 dark:text-gray-300 max-w-3xl">
+              I'm a dedicated Mobile App and Backend Developer with a strong foundation in data structures and algorithms, honed through my experience at <span className="font-semibold">A2SV</span>. I specialize in building efficient, scalable, and user-centric applications using <span className="font-semibold">Flutter, Node.js, NestJS, and modern DevOps practices</span>. With a deep passion for clean architecture and real-world problem-solving, I strive to create technology that's not just functional — but impactful.
             </p>
             <div className="flex flex-wrap gap-4">
               <button
