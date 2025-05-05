@@ -44,8 +44,8 @@ const About = ({ onSectionChange }: AboutProps) => {
             <div className="relative max-w-md mx-auto">
               <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-green-500 rounded-full blur opacity-20"></div>
               <img
-                src="/profile.jpg"
-                alt="Profile"
+                src="/images/asegid.jfif"
+                alt="Asegid Adane"
                 className="relative rounded-full w-64 h-64 object-cover border-4 border-white dark:border-gray-800 shadow-lg hover:shadow-xl transition-all duration-300"
               />
             </div>

@@ -17,9 +17,17 @@ interface Project {
 
 const projects: Project[] = [
   {
+    title: 'Fitness Tracker App',
+    description: 'A comprehensive fitness tracking application built with Flutter, featuring workout planning, progress tracking, and nutrition management. Includes real-time data synchronization and personalized workout recommendations.',
+    image: '/images/fitness app.png',
+    technologies: ['Flutter', 'Firebase', 'Node.js', 'MongoDB'],
+    githubLink: 'https://github.com/yourusername/fitness-tracker',
+    demoLink: 'https://fitness-tracker-demo.com',
+  },
+  {
     title: 'E-Commerce Mobile App',
     description: 'A cross-platform e-commerce application built with Flutter and Firebase, featuring real-time updates, secure payments, and user authentication.',
-    image: '/project1.jpg',
+    image: '/images/project1.jpg',
     technologies: ['Flutter', 'Firebase', 'Node.js', 'MongoDB'],
     githubLink: 'https://github.com/yourusername/ecommerce-app',
     demoLink: 'https://ecommerce-app-demo.com',
@@ -27,7 +35,7 @@ const projects: Project[] = [
   {
     title: 'Microservices Architecture',
     description: 'A scalable backend system using NestJS microservices, implementing event-driven architecture and containerization with Docker.',
-    image: '/project2.jpg',
+    image: '/images/project2.jpg',
     technologies: ['NestJS', 'Docker', 'PostgreSQL', 'Redis'],
     githubLink: 'https://github.com/yourusername/microservices',
     demoLink: 'https://microservices-demo.com',
@@ -35,7 +43,7 @@ const projects: Project[] = [
   {
     title: 'Task Management API',
     description: 'A RESTful API for task management built with FastAPI, featuring JWT authentication, role-based access control, and automated testing.',
-    image: '/project3.jpg',
+    image: '/images/project3.jpg',
     technologies: ['FastAPI', 'PostgreSQL', 'JWT', 'Pytest'],
     githubLink: 'https://github.com/yourusername/task-api',
     demoLink: 'https://task-api-demo.com',
@@ -43,7 +51,7 @@ const projects: Project[] = [
   {
     title: 'Portfolio Website',
     description: 'A modern portfolio website built with React, TypeScript, and Tailwind CSS, featuring dark mode, smooth animations, and responsive design.',
-    image: '/project4.jpg',
+    image: '/images/project4.jpg',
     technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
     githubLink: 'https://github.com/yourusername/portfolio',
     demoLink: 'https://your-portfolio.com',
@@ -51,7 +59,7 @@ const projects: Project[] = [
   {
     title: 'AI Chatbot Integration',
     description: 'A conversational AI chatbot integrated with a web application, using natural language processing and machine learning for intelligent responses.',
-    image: '/project5.jpg',
+    image: '/images/project5.jpg',
     technologies: ['Python', 'TensorFlow', 'NLP', 'WebSocket'],
     githubLink: 'https://github.com/yourusername/ai-chatbot',
     demoLink: 'https://ai-chatbot-demo.com',
