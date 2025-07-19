@@ -43,14 +43,14 @@ const projects: Project[] = [
   {
     title: 'event-ticketing-backend ',
     description: 'Built a scalable event ticketing backend with NestJS and PostgreSQL, supporting auth, event management, and ticket booking.',
-    image: '/images/project3.jpg',
+    image: '/images/event tecketing image.png',
     technologies: ['Nest.js', 'PostgreSQL', 'JWT', 'Pytest','Docker','Redis','prisma'],
     githubLink: 'https://github.com/yourusername/task-api',
     demoLink: 'https://task-api-demo.com',
   },
   {
     title: 'EduSphere',
-    description: 'Built a scalable event ticketing backend with NestJS and PostgreSQL, supporting auth, event management, and ticket booking',
+    description: 'EduSphere is a Learning Management System (LMS) designed to simplify online education and training',
     image: '/images/project4.jpg',
     technologies: ['Express', 'mongoDB', 'redis', 'Docker'],
     githubLink: 'https://github.com/ASEGIDADANE/EduSphere',
@@ -59,7 +59,7 @@ const projects: Project[] = [
   {
     title: 'ShopAPI',
     description: 'RESTful API for an e-commerce platform using Node.js and MongoDB, with features like auth, product management, orders, cart, reviews, and admin roles.',
-    image: '/images/project5.jpg',
+    image: '/images/ecommerce image.jpg',
     technologies: ['Node.js', 'MongoDB', 'redis', ''],
     githubLink: 'https://github.com/ASEGIDADANE/shop_api',
     demoLink: 'https://github.com/ASEGIDADANE/shop_api',

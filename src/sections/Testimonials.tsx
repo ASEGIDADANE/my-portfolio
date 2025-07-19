@@ -16,11 +16,11 @@ interface Testimonial {
 
 const testimonials: Testimonial[] = [
   {
-    quote: "Working with this developer was an absolute pleasure. Their expertise in both mobile and backend development helped us build a robust and scalable application that exceeded our expectations.",
-    name: "John Doe",
-    role: "CTO",
-    company: "TechCorp",
-    image: "/testimonial1.jpg",
+    quote: "I had the pleasure of working with Asegid as part of my development team, where he served as a Flutter mobile developer. From day one, Asegid demonstrated exceptional technical skills, a proactive attitude, and a strong sense of ownership. He consistently delivered clean, efficient, and well-structured code—often ahead of schedule—and was quick to grasp complex requirements. Beyond his technical capabilities, Asegid was a collaborative team player who brought positive energy to every meeting and took feedback with humility and a growth mindset. I strongly recommend him for any future opportunity",
+    name: "Yordanos W.",
+    role: "Project Manager",
+    company: "Eskalate",
+    image: "/images/yordanos.jpeg",
   },
   {
     quote: "The attention to detail and clean code practices demonstrated in our project were impressive. They consistently delivered high-quality work and were a great team player.",
