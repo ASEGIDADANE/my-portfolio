@@ -20,7 +20,7 @@ const testimonials: Testimonial[] = [
     name: "Yordanos W.",
     role: "Project Manager",
     company: "Eskalate",
-    image: "/images/yordanos.jpeg",
+    image: "/images//yordanos.jpeg",
   },
   {
     quote: "The attention to detail and clean code practices demonstrated in our project were impressive. They consistently delivered high-quality work and were a great team player.",
