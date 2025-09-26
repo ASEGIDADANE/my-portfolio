@@ -155,7 +155,7 @@ const Contact = ({ onSectionChange }: ContactProps) => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="mt-12 flex flex-col items-center space-y-6"
           >
-            <div className="flex space-x-6">
+            {/* <div className="flex space-x-6">
               <a
                 href="https://github.com/ASEGIDADANE"
                 target="_blank"
@@ -208,7 +208,7 @@ const Contact = ({ onSectionChange }: ContactProps) => {
                   <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.563 8.994l-1.955 9.196c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.121l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.566-4.458c.535-.196 1.006.128.832.941z" />
                 </svg>
               </a>
-            </div>
+            </div> */}
             <a
               href="mailto:asegidadane27@gmail.com"
               className="text-gray-600 dark:text-gray-400 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-300"
